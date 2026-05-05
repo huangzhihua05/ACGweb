@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>注册 - 腾游电竞工作室</title>
+  <meta name="description" content="腾游电竞工作室用户注册" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="anti-fraud-banner" role="note">
+    <img src="assets/anti-fraud-banner.png" alt="反诈提示横幅" />
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo" title="腾游电竞工作室">
+        <span class="logo__icon" aria-hidden="true">腾</span>
+        <span>腾游ACG公益资源</span>
+      </a>
+      <nav class="nav-main" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="permanent.html">永久地址（建议保存）</a>
+        <a href="vpn.html">VPN（自用推荐）</a>
+        <a href="faq.html">解压常见问题解答</a>
+        <a href="donate.html">捐赠方式（自愿）</a>
+        <a href="find-game.html">代找游戏</a>
+        <div class="nav-actions">
+          <button type="button" class="icon-btn" id="themeToggle" title="切换深色模式" aria-label="切换深色模式">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          <button type="button" class="icon-btn" id="searchIconBtn" title="搜索文章" aria-label="搜索文章">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+          <div class="nav-auth" aria-label="账户">
+            <a href="login.html" class="nav-auth__link">登录</a>
+            <span class="nav-auth__sep" aria-hidden="true">|</span>
+            <a href="register.html" class="nav-auth__link nav-auth__link--active">注册</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout-wrap">
+    <main>
+      <div class="page-hero">
+        <h1>注册</h1>
+        <p>创建账号即表示您已阅读并同意站点服务条款与隐私说明（上线后补充链接）。</p>
+      </div>
+      <div class="content-section auth-panel">
+        <p class="auth-form__hint">以下为静态页面演示表单，提交不会发送到服务器。</p>
+        <form class="auth-form" id="registerForm" action="#" method="post" novalidate>
+          <label>
+            用户名
+            <input type="text" name="username" autocomplete="username" minlength="2" maxlength="32" placeholder="2–32 个字符" required />
+          </label>
+          <label>
+            邮箱
+            <input type="email" name="email" autocomplete="email" placeholder="用于登录与找回密码" required />
+          </label>
+          <label>
+            密码
+            <input type="password" name="password" autocomplete="new-password" minlength="8" placeholder="至少 8 位" required />
+          </label>
+          <label>
+            确认密码
+            <input type="password" name="password2" autocomplete="new-password" placeholder="再次输入密码" required />
+          </label>
+          <label class="auth-form__check">
+            <input type="checkbox" name="agree" required />
+            我已了解本站为 ACG 公益资源分享，遵守法律法规
+          </label>
+          <button type="submit" class="btn-primary">注册</button>
+        </form>
+        <p class="auth-form__foot">已有账号？<a href="login.html">前往登录</a></p>
+      </div>
+    </main>
+
+    <aside class="sidebar" aria-label="侧边栏">
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">文章搜索</h3>
+        <div class="search-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="search" id="sidebarSearch" placeholder="文章搜索…" autocomplete="off" />
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">公告</h3>
+        <p class="notice-text">
+          <strong>腾游电竞工作室</strong> 专注 ACG 相关资源整理与分享，仅供学习交流。请支持正版，遵守当地法律法规。
+        </p>
+      </div>
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">一言</h3>
+        <blockquote class="hitokoto">
+          博学之，审问之，慎思之，明辨之，笃行之。
+          <cite>——《礼记·中庸》</cite>
+        </blockquote>
+      </div>
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">标签云</h3>
+        <div class="tag-cloud">
+          <a href="index.html" class="tc-1">2059</a>
+          <a href="index.html" class="tc-2">Amnesia</a>
+          <a href="index.html" class="tc-3">Galgame</a>
+          <a href="index.html" class="tc-4">汉化</a>
+          <a href="index.html" class="tc-5">OST</a>
+          <a href="index.html" class="tc-6">像素</a>
+          <a href="index.html" class="tc-7">全年龄</a>
+          <a href="index.html" class="tc-8">补丁</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">© 腾游电竞工作室 · ACG 资源分享 · 仅供学习交流</footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

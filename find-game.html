@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>代找游戏 - 腾游电竞工作室</title>
+  <meta name="description" content="代找游戏留言板 · 腾游电竞工作室" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="anti-fraud-banner" role="note">
+    <img src="assets/anti-fraud-banner.png" alt="反诈提示横幅" />
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo" title="腾游电竞工作室">
+        <span class="logo__icon" aria-hidden="true">腾</span>
+        <span>腾游ACG公益资源</span>
+      </a>
+      <nav class="nav-main" aria-label="主导航">
+        <a href="index.html">首页</a>
+        <a href="permanent.html">永久地址（建议保存）</a>
+        <a href="vpn.html">VPN（自用推荐）</a>
+        <a href="faq.html">解压常见问题解答</a>
+        <a href="donate.html">捐赠方式（自愿）</a>
+        <a href="find-game.html" class="is-active">代找游戏</a>
+        <div class="nav-actions">
+          <button type="button" class="icon-btn" id="themeToggle" title="切换深色模式" aria-label="切换深色模式">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          <button type="button" class="icon-btn" id="searchIconBtn" title="搜索文章" aria-label="搜索文章">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+          <div class="nav-auth" aria-label="账户">
+            <a href="login.html" class="nav-auth__link">登录</a>
+            <span class="nav-auth__sep" aria-hidden="true">|</span>
+            <a href="register.html" class="nav-auth__link">注册</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout-wrap">
+    <main>
+      <div class="page-hero">
+        <h1>代找游戏</h1>
+        <p>留下你想找的游戏名称、平台与版本说明，志愿者或站友看到可能会回复线索。</p>
+      </div>
+      <div class="content-section">
+        <p class="board-intro">
+          本页为<strong>发帖 + 评论</strong>。仅<strong>登录用户</strong>可发帖与评论；<strong>评论与留言均禁止包含磁力链接</strong>（如 <code>magnet:?</code>）。只能认可站主的分享链接，安全健康无毒，避免用户们遭受损失。
+        </p>
+
+        <div id="boardSessionBar" class="board-session-wrap" aria-live="polite"></div>
+
+        <p id="boardGuestNote" class="board-guest-note">
+          登录后即可发布留言并在他人帖子下评论。
+        </p>
+
+        <form class="board-form" id="boardForm" action="#" method="post">
+          <p class="board-form__hint board-form__hint--top">将以您登录的昵称作为发帖署名。</p>
+          <label>
+            留言内容
+            <textarea name="content" maxlength="2000" placeholder="例：想找 PC 中文版《×××》，可提供网盘容量说明，请勿发布磁力链接。" required></textarea>
+          </label>
+          <p class="board-form__hint">最多 2000 字。禁止违法、侵权、交易内容及磁力链接。</p>
+          <button type="submit" class="btn-primary">发布留言</button>
+        </form>
+
+        <h2>全部留言</h2>
+        <p class="board-page-hint">首页每页最多显示 15 条留言，最新留言始终排在最前。超过 15 条后会出现第 2 页及更多分页。点击留言标题可进入该留言详情页查看评论。</p>
+        <div id="boardView" aria-live="polite"></div>
+        <nav class="board-pagination" id="boardPagination" aria-label="留言分页" hidden></nav>
+      </div>
+    </main>
+
+    <aside class="sidebar" aria-label="侧边栏">
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">文章搜索</h3>
+        <div class="search-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="search" id="sidebarSearch" placeholder="文章搜索…" autocomplete="off" />
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">公告</h3>
+        <p class="notice-text">
+          <strong>腾游电竞工作室</strong> 专注 ACG 相关资源整理与分享，仅供学习交流。代找仅为信息互助，不保证一定能找到资源。
+        </p>
+      </div>
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">一言</h3>
+        <blockquote class="hitokoto">
+          独学而无友，则孤陋而寡闻。
+          <cite>——《礼记·学记》</cite>
+        </blockquote>
+      </div>
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">标签云</h3>
+        <div class="tag-cloud">
+          <a href="index.html" class="tc-1">2059</a>
+          <a href="index.html" class="tc-2">Amnesia</a>
+          <a href="index.html" class="tc-3">Galgame</a>
+          <a href="index.html" class="tc-4">汉化</a>
+          <a href="index.html" class="tc-5">OST</a>
+          <a href="index.html" class="tc-6">像素</a>
+          <a href="index.html" class="tc-7">全年龄</a>
+          <a href="index.html" class="tc-8">补丁</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">© 腾游电竞工作室 · ACG 资源分享 · 仅供学习交流</footer>
+  <script src="js/main.js"></script>
+  <script src="js/find-game.js"></script>
+</body>
+</html>

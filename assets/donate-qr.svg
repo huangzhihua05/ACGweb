@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 420" role="img" aria-label="????????">
+  <rect width="420" height="420" rx="24" fill="#ffffff"/>
+  <rect x="16" y="16" width="388" height="388" rx="18" fill="#f8fafc" stroke="#d1d5db"/>
+  <rect x="28" y="28" width="364" height="52" rx="12" fill="#f59e0b" opacity="0.18"/>
+  <text x="210" y="62" text-anchor="middle" font-size="24" font-family="Arial, 'Microsoft YaHei', sans-serif" fill="#111827" font-weight="700">?????????</text>
+
+  <rect x="54" y="104" width="312" height="34" rx="4" fill="#111827"/>
+  <rect x="54" y="146" width="312" height="8" rx="2" fill="#111827" opacity="0.85"/>
+  <rect x="54" y="158" width="312" height="8" rx="2" fill="#111827" opacity="0.65"/>
+  <rect x="54" y="170" width="312" height="8" rx="2" fill="#111827" opacity="0.45"/>
+  <rect x="54" y="186" width="312" height="8" rx="2" fill="#111827" opacity="0.25"/>
+
+  <rect x="108" y="204" width="204" height="204" rx="14" fill="#111827"/>
+  <rect x="124" y="220" width="32" height="32" fill="#ffffff"/>
+  <rect x="260" y="220" width="32" height="32" fill="#ffffff"/>
+  <rect x="124" y="356" width="32" height="32" fill="#ffffff"/>
+  <rect x="156" y="252" width="24" height="24" fill="#ffffff"/>
+  <rect x="180" y="220" width="20" height="20" fill="#ffffff"/>
+  <rect x="204" y="244" width="20" height="20" fill="#ffffff"/>
+  <rect x="228" y="220" width="20" height="20" fill="#ffffff"/>
+  <rect x="204" y="268" width="20" height="20" fill="#ffffff"/>
+  <rect x="180" y="292" width="24" height="24" fill="#ffffff"/>
+  <rect x="228" y="292" width="24" height="24" fill="#ffffff"/>
+  <rect x="156" y="316" width="20" height="20" fill="#ffffff"/>
+  <rect x="204" y="340" width="20" height="20" fill="#ffffff"/>
+  <rect x="252" y="316" width="20" height="20" fill="#ffffff"/>
+  <rect x="192" y="368" width="36" height="12" rx="6" fill="#f97316"/>
+  <circle cx="210" cy="306" r="18" fill="#1d4ed8"/>
+  <text x="210" y="314" text-anchor="middle" font-size="18" font-family="Arial, 'Microsoft YaHei', sans-serif" fill="#ffffff" font-weight="700">?</text>
+
+  <text x="210" y="404" text-anchor="middle" font-size="14" font-family="Arial, 'Microsoft YaHei', sans-serif" fill="#6b7280">???????????????</text>
+</svg>

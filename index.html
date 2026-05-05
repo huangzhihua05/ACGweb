@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页 - 腾游电竞工作室</title>
+  <meta name="description" content="腾游电竞工作室 — ACG 资源分享与交流" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="anti-fraud-banner" role="note">
+    <img src="assets/anti-fraud-banner.png" alt="反诈提示横幅" />
+  </div>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo" title="腾游电竞工作室">
+        <span class="logo__icon" aria-hidden="true">腾</span>
+        <span>腾游ACG公益资源</span>
+      </a>
+      <nav class="nav-main" aria-label="主导航">
+        <a href="index.html" class="is-active">首页</a>
+        <a href="permanent.html">永久地址（建议保存）</a>
+        <a href="vpn.html">VPN（自用推荐）</a>
+        <a href="faq.html">解压常见问题解答</a>
+        <a href="donate.html">捐赠方式（自愿）</a>
+        <a href="find-game.html">代找游戏</a>
+        <div class="nav-actions">
+          <button type="button" class="icon-btn" id="themeToggle" title="切换深色模式" aria-label="切换深色模式">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
+          <button type="button" class="icon-btn" id="searchIconBtn" title="搜索文章" aria-label="搜索文章">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+          <div class="nav-auth" aria-label="账户">
+            <a href="login.html" class="nav-auth__link">登录</a>
+            <span class="nav-auth__sep" aria-hidden="true">|</span>
+            <a href="register.html" class="nav-auth__link">注册</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout-wrap">
+    <main aria-label="文章列表">
+      <div class="content-section">
+        <div class="home-post-tools">
+          <button type="button" class="btn-primary" id="openPostFormBtn">发表文章</button>
+        </div>
+
+        <div class="home-post-modal" id="homePostModal" hidden>
+          <div class="home-post-modal__overlay" data-close-post-modal></div>
+          <div class="home-post-modal__panel" role="dialog" aria-modal="true" aria-labelledby="homePostModalTitle">
+            <button type="button" class="home-post-modal__close" aria-label="关闭" data-close-post-modal>x</button>
+            <h2 id="homePostModalTitle" class="home-section-title">发表文章</h2>
+            <form class="home-post-form home-post-form--modal" id="homePostForm">
+              <label>
+                标题
+                <input type="text" name="title" maxlength="120" placeholder="请输入文章标题" required />
+              </label>
+              <div class="home-post-images">
+                <button type="button" class="btn-primary btn-primary--ghost" id="addImageBtn">添加图片</button>
+                <input type="file" id="homePostImagesInput" accept="image/*" multiple hidden />
+                <p class="home-post-images__hint">第一张图片会自动作为主图。</p>
+                <div class="home-post-images__list" id="homePostImagesList"></div>
+              </div>
+              <label>
+                文章内容
+                <div class="rich-editor-toolbar" aria-label="富文本编辑工具栏">
+                  <p class="rich-editor-toolbar__hint">支持标题、字体、颜色、字号和基础排版</p>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="bold"><strong>B</strong></button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="italic"><em>I</em></button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="underline"><u>U</u></button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="insertUnorderedList">• 列表</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="justifyLeft">左对齐</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="justifyCenter">居中</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="justifyRight">右对齐</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="formatBlock" data-editor-value="h1">H1</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="formatBlock" data-editor-value="h2">H2</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="formatBlock" data-editor-value="h3">H3</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="blockquote">引用</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="createLink">插入链接</button>
+                  <button type="button" class="rich-editor-toolbar__btn" data-editor-command="removeFormat">清除格式</button>
+                  <label class="rich-editor-toolbar__field">颜色<input type="color" id="postTextColor" value="#1a1a1a" /></label>
+                  <label class="rich-editor-toolbar__field">字号<select id="postTextSize"><option value="3">小</option><option value="4" selected>标准</option><option value="5">大</option><option value="6">更大</option></select></label>
+                </div>
+                <div id="homePostBodyEditor" class="rich-editor" contenteditable="true" data-placeholder="请输入正文，支持换行和简单样式"></div>
+                <textarea name="body" id="homePostBodyInput" hidden required></textarea>
+              </label>
+              <button type="submit" class="btn-primary">发布文章</button>
+            </form>
+          </div>
+        </div>
+
+        <h2 class="home-section-title">最新文章</h2>
+        <div id="homeArticleList" class="article-list"></div>
+        <nav class="board-pagination" id="homePagination" aria-label="文章分页" hidden></nav>
+      </div>
+    </main>
+
+    <aside class="sidebar" aria-label="侧边栏">
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">文章搜索</h3>
+        <div class="search-box search-box--inline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="search" id="sidebarSearch" placeholder="文章搜索…" autocomplete="off" list="searchSuggestList" />
+          <button type="button" class="btn-primary btn-primary--sm search-confirm-btn" id="searchConfirmBtn">确认</button>
+          <datalist id="searchSuggestList"></datalist>
+        </div>
+        <div class="search-history" id="searchHistoryWrap" hidden>
+          <div class="search-history__head">
+            <span>历史搜索记录</span>
+            <button type="button" class="search-history__clear" id="clearSearchHistoryBtn">清空</button>
+          </div>
+          <div class="search-history__list" id="searchHistoryList"></div>
+        </div>
+      </div>
+
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">公告</h3>
+        <p class="notice-text">
+          <strong>腾游电竞工作室</strong> 专注 ACG 相关资源整理与分享，仅供学习交流。请支持正版，遵守当地法律法规。本站不托管任何商业发行内容，如有侵权请联系删除通道见页脚说明。
+        </p>
+      </div>
+
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">一言</h3>
+        <blockquote class="hitokoto">
+          长风破浪会有时，直挂云帆济沧海。
+          <cite>——李白《行路难》</cite>
+        </blockquote>
+      </div>
+
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">标签云</h3>
+        <div class="tag-cloud">
+          <a href="#" class="tc-1">2059</a>
+          <a href="#" class="tc-2">Amnesia</a>
+          <a href="#" class="tc-3">Galgame</a>
+          <a href="#" class="tc-4">汉化</a>
+          <a href="#" class="tc-5">OST</a>
+          <a href="#" class="tc-6">像素</a>
+          <a href="#" class="tc-7">全年龄</a>
+          <a href="#" class="tc-8">补丁</a>
+        </div>
+      </div>
+      <div class="sidebar-block">
+        <h3 class="sidebar-block__title">热度排行</h3>
+        <div id="hotRankHome" class="hot-rank"></div>
+        <a class="hot-rank__more" id="hotRankMoreBtn" href="ranking.html">更多</a>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="site-footer">
+    © 腾游电竞工作室 · ACG 资源分享 · 仅供学习交流
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>
